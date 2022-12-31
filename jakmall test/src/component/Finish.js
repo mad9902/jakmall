@@ -6,6 +6,13 @@ import { useNavigate } from 'react-router-dom'
 
 const Tes3 = () => {
 
+    function randomString(length, chars) {
+        var result = '';
+        for (var i = length; i > 0; --i) result += chars[Math.floor(Math.random() * chars.length)];
+        return result;
+    }
+    var rString = randomString(5, '23456789ABCDEFGHJKLMNPQRSTUVWXYZ');
+
     const navigate = useNavigate()
 
     return (
@@ -24,7 +31,7 @@ const Tes3 = () => {
                         </div>
                     </div>
                     <div className="finishline">
-                        <p>Order ID : XXKYB</p>
+                        <p>{`Order ID : ${rString} `}</p>
                         <p>Your order will be delivered today with GO-SEND</p>
                         <div onClick={() => navigate("/")} className="back">
                             <img onClick={() => navigate("/")} width={"15px"} src={arrow}/>
